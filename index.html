@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Font awsome MRX/css/font-awesome.css">
+    <link rel="stylesheet" href="./Font awsome MRX/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>backvid</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Maxim</a>
+        <div class="menu-btn">
+            
+        </div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+    <section class="home">
+        <video class="video-slide active" src="./0512.mp4" autoplay muted loop> </video>
+        <video class="video-slide" src="./0513.mp4" autoplay muted loop> </video>
+        <video class="video-slide" src="./0514.mp4" autoplay muted loop> </video>
+        <video class="video-slide" src="./0515.mp4" autoplay muted loop> </video>
+        <video class="video-slide" src="./0516.mp4" autoplay muted loop> </video>
+
+       
+        <div class="content active">
+            <h1>Wonderful<br><span>Night city</span></h1>
+            <p>Our city have a great view from above at night, you can clearly see the beautiful lights that make our city bright during the night.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="content">
+            <h1>next to<br><span>the beach</span></h1>
+            <p>Our city is built next the the beach, wich can help grow the number of our visitors yearly by 18% and prove our skills in hight quality construction.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="content">
+            <h1>Multiple<br><span>Tours</span></h1>
+            <p>from the number of the tours in our city, and their height, we can prove our credibility and prower in creating the most beautiful buildings in the country.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="content">
+            <h1>Wonderful<br><span>Country side</span></h1>
+            <p>our country side is gorgeous mostly at dawn, the sunset is always in this beautiful color.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="content">
+            <h1>Transport<br><span>and access</span></h1>
+            <p>We have Multiple type of transportation and access of differents facilities</p>
+            <a href="#">Read more</a>
+        </div>
+
+        <div class="media-icons">
+            <a href="https://www.linkedin.com/in/mohamedkammou/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/the.great.x"><i class="fa fa-instagram"></i></a>
+            <a href="https://github.com/THE12X"><i class="fa fa-github"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        //
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn .addEventListener("click", ()=>{
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        //
+        const btns =document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+</body>
+</html>
